@@ -1,0 +1,73 @@
+{
+	"name": "SG_MD_ARTICLE_MASTER",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_ho4",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "01-ingest/SG/SG_MD_ARTICLE_MASTER/SG_MD_ARTICLE_20181231.txt"
+					},
+					{
+						"name": "Destination",
+						"value": "[dbo].[MD_ARTICLE_MASTER]"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "BlobSource",
+						"recursive": false
+					},
+					"sink": {
+						"type": "SqlSink",
+						"writeBatchSize": 10000
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"columnMappings": {
+							"Article": "ARTICLE",
+							"M.Hier Lvl 1 - Div": "DIVISION",
+							"M.Hier Lvl 2 Dep": "DEPARTMENT",
+							"M.Hier Lvl 3 Cat": "CATEGORY",
+							"M.Hier Lvl4 - SubCat": "SUB_CATEGORY",
+							"M.Hier Lvl5 - Class": "CLASS",
+							"Brand Code": "BRAND_CODE",
+							"Brand Category": "BRAND_CATEGORY",
+							"Artl Category": "ARTICLE_CATEGORY",
+							"Brand": "BRAND",
+							"Supply source": "SUPPLY_SOURCE",
+							"Base Unit of Measure": "BASE_UNIT",
+							"Article Type": "ARTICLE_TYPE_DESCRIPTION",
+							"Basic article": "BASIC_ARTICLE",
+							"B-Stock No.": "BSTOCK_NO",
+							"Parent Indicator": "PARENT_CHILD_INDICATOR"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_ho4",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "table_md_article_master",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

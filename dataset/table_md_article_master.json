@@ -1,0 +1,80 @@
+{
+	"name": "table_md_article_master",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "pleungdb",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "ARTICLE",
+				"type": "String"
+			},
+			{
+				"name": "DIVISION",
+				"type": "String"
+			},
+			{
+				"name": "DEPARTMENT",
+				"type": "String"
+			},
+			{
+				"name": "CATEGORY",
+				"type": "String"
+			},
+			{
+				"name": "SUB_CATEGORY",
+				"type": "String"
+			},
+			{
+				"name": "CLASS",
+				"type": "String"
+			},
+			{
+				"name": "BRAND_CODE",
+				"type": "String"
+			},
+			{
+				"name": "BRAND_CATEGORY",
+				"type": "String"
+			},
+			{
+				"name": "ARTICLE_CATEGORY",
+				"type": "String"
+			},
+			{
+				"name": "BRAND",
+				"type": "String"
+			},
+			{
+				"name": "SUPPLY_SOURCE",
+				"type": "String"
+			},
+			{
+				"name": "BASE_UNIT",
+				"type": "String"
+			},
+			{
+				"name": "ARTICLE_TYPE_DESCRIPTION",
+				"type": "String"
+			},
+			{
+				"name": "BASIC_ARTICLE",
+				"type": "String"
+			},
+			{
+				"name": "BSTOCK_NO",
+				"type": "String"
+			},
+			{
+				"name": "PARENT_CHILD_INDICATOR",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[MD_ARTICLE_MASTER]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

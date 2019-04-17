@@ -1,0 +1,51 @@
+{
+	"name": "SFTPtoBlobStorage",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_7y9",
+				"type": "Copy",
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "/home/peleun/public/SG/SG_MD_ARTICLE_MASTER/"
+					},
+					{
+						"name": "Destination",
+						"value": "01-ingest/SG/SG_MD_ARTICLE_MASTER/SG_MD_ARTICLE_MASTER_SFTP"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "FileSystemSource",
+						"recursive": false
+					},
+					"sink": {
+						"type": "BlobSink"
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_7y9",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_7y9",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

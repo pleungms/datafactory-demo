@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_7y9",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dfprd",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": ",",
+				"rowDelimiter": "",
+				"nullValue": "",
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": false
+			},
+			"fileName": "SG_MD_ARTICLE_MASTER_SFTP",
+			"folderPath": "01-ingest/SG/SG_MD_ARTICLE_MASTER"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

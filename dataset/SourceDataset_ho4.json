@@ -1,0 +1,96 @@
+{
+	"name": "SourceDataset_ho4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dfprd",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "Article",
+				"type": "String"
+			},
+			{
+				"name": "M.Hier Lvl 1 - Div",
+				"type": "String"
+			},
+			{
+				"name": "M.Hier Lvl 2 Dep",
+				"type": "String"
+			},
+			{
+				"name": "M.Hier Lvl 3 Cat",
+				"type": "String"
+			},
+			{
+				"name": "M.Hier Lvl4 - SubCat",
+				"type": "String"
+			},
+			{
+				"name": "M.Hier Lvl5 - Class",
+				"type": "String"
+			},
+			{
+				"name": "Brand Code",
+				"type": "String"
+			},
+			{
+				"name": "Brand Category",
+				"type": "String"
+			},
+			{
+				"name": "Artl Category",
+				"type": "String"
+			},
+			{
+				"name": "Brand",
+				"type": "String"
+			},
+			{
+				"name": "Supply source",
+				"type": "String"
+			},
+			{
+				"name": "Base Unit of Measure",
+				"type": "String"
+			},
+			{
+				"name": "Article Type",
+				"type": "String"
+			},
+			{
+				"name": "Assortm. grade",
+				"type": "String"
+			},
+			{
+				"name": "Basic article",
+				"type": "String"
+			},
+			{
+				"name": "B-Stock No.",
+				"type": "String"
+			},
+			{
+				"name": "Parent Indicator",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "TextFormat",
+				"columnDelimiter": "|",
+				"rowDelimiter": "",
+				"quoteChar": "\"",
+				"nullValue": "\\N",
+				"encodingName": null,
+				"treatEmptyAsNull": true,
+				"skipLineCount": 0,
+				"firstRowAsHeader": true
+			},
+			"fileName": "SG_MD_ARTICLE_20181231.txt",
+			"folderPath": "01-ingest/SG/SG_MD_ARTICLE_MASTER"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
